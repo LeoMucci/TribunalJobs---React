@@ -1,30 +1,28 @@
 import React from 'react';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import ServicesSection from './components/ServicesSection';
-import VideoSection from './components/VideoSection';
-import TeamSection from './components/TeamSection';
-import TestimonialsSection from './components/TestimonialsSection';
-import ExperimenteSection from './components/ExperimenteSection';
-import Footer from './components/Footer'; // Certifique-se de que o Footer está sendo importado aqui
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import IndexPage from './Pages/Index'; // Landing Page como a página inicial
+import Login from './Pages/Login';
+import Cadastro from './Pages/Cadastro';
+import CadastroADM from './Pages/CadastroADM';
+import EsqueciSenha from './Pages/EsqueciSenha';
+import EsqueciSenhaConcluido from './Pages/EsqueciSenhaConcluido';
+import EsqueciSenhaNovaSenha from './Pages/EsqueciSenhaNovaSenha';
+import EsqueciSenhaVerificacao from './Pages/EsqueciSenhaVerificacao';
 
 const App = () => {
   return (
-    <>
-      <div className="App">
-      <main className="flex overflow-hidden flex-col bg-zinc-300">
-        <Header />
-        
-          <HeroSection />
-          <ServicesSection />
-          <VideoSection />
-          <TestimonialsSection />
-          <TeamSection />
-          <ExperimenteSection />
-        </main>
-        <Footer />
-      </div>
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<IndexPage />} /> {/* Landing Page como rota inicial */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/cadastroadm" element={<CadastroADM />} />
+        <Route path="/esquecisenha" element={<EsqueciSenha />} />
+        <Route path="/esquecisenhaconcluido" element={<EsqueciSenhaConcluido />} />
+        <Route path="/esquecisenhanovasenha" element={<EsqueciSenhaNovaSenha />} />
+        <Route path="/esquecisenhaverificacao" element={<EsqueciSenhaVerificacao />} />
+      </Routes>
+    </Router>
   );
 };
 
