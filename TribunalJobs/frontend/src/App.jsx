@@ -13,6 +13,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/index" element={<IndexPage />} /> {/* Landing Page como rota inicial */}
         <Route path="/" element={<IndexPage />} /> {/* Landing Page como rota inicial */}
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
